@@ -1,11 +1,11 @@
 import React, { useReducer } from "react";
-import reducer, { initialState } from "../state/reducer";
+import CreateReaction from "./CreateReaction";
 import { useCustomContext } from "../state/appContext";
+import MessageReactions from "./MessageReactions";
 
 const MessageBoard = () => {
   const {
-    state: { messages },
-    dispatch,
+    state: { messages, reactionsMap },
   } = useCustomContext();
   console.log(messages);
   return (
@@ -20,6 +20,8 @@ const MessageBoard = () => {
               <h4>{new Date(timeStamp).toDateString()}</h4>
               <p>{text}</p>
               <h4> - {username}</h4>
+              <CreateReaction messageId={id} />
+              <MessageReactions messageReactions={reactionsMap[id]} />
               <hr />
             </div>
           );

@@ -9,3 +9,7 @@ Steps:
 2. npm install
 3. npm run dev
 
+To see multiple user connections, run the above demo link in different browsers and send messages. The pub sub channel will publish messages to the channel and receive them on message board. Multiple users will also receive the messages from different browsers.
+
+
+
